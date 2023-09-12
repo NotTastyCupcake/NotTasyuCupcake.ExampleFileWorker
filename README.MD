@@ -1,9 +1,9 @@
 
-# Настройка образца для использования SQL Server
+# РќР°СЃС‚СЂРѕР№РєР° РѕР±СЂР°Р·С†Р° РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ SQL Server
 
-1. Убедитесь, что ваши строки подключения в `appsettings.json` указывают на локальный экземпляр SQL Server.
+1. РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ РІР°С€Рё СЃС‚СЂРѕРєРё РїРѕРґРєР»СЋС‡РµРЅРёСЏ РІ `appsettings.json` СѓРєР°Р·С‹РІР°СЋС‚ РЅР° Р»РѕРєР°Р»СЊРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ SQL Server.
 
-2. Закомментируйте сервисы
+2. Р—Р°РєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЃРµСЂРІРёСЃС‹
 ```
 //builder.Services.AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>));
 //builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
@@ -15,13 +15,13 @@
 //builder.Logging.AddConsole();
 ```
 
-3. Откройте командную строку в папке NotTasyuCupcake.ExampleFileWorker.ConsoleUI и выполните следующие команды:
+3. РћС‚РєСЂРѕР№С‚Рµ РєРѕРјР°РЅРґРЅСѓСЋ СЃС‚СЂРѕРєСѓ РІ РїР°РїРєРµ NotTasyuCupcake.ExampleFileWorker.ConsoleUI Рё РІС‹РїРѕР»РЅРёС‚Рµ СЃР»РµРґСѓСЋС‰РёРµ РєРѕРјР°РЅРґС‹:
 
 ```
 Update-Database -Context DataContext -Project NotTasyuCupcake.ExampleFileWorker.Infrastructure -StartupProject NotTasyuCupcake.ExampleFileWorker.ConsoleUI
 ```
 
-**Примечание.** Если вам нужно создать миграции, вы можете использовать эти команды:
+**РџСЂРёРјРµС‡Р°РЅРёРµ.** Р•СЃР»Рё РІР°Рј РЅСѓР¶РЅРѕ СЃРѕР·РґР°С‚СЊ РјРёРіСЂР°С†РёРё, РІС‹ РјРѕР¶РµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЌС‚Рё РєРѕРјР°РЅРґС‹:
 
 ```
 Add-Migration -Name DataMigration -Context DataContext -Project NotTasyuCupcake.ExampleFileWorker.Infrastructure -StartupProject NotTasyuCupcake.ExampleFileWorker.ConsoleUI
